@@ -65,7 +65,7 @@ v1.0, 2024-02-01
 
 .自动链接、URL标志、邮件标志
  
- https://asciidoctor.org - 自动链接
+ https://asciidoctor.org - 自动的链接
  https://asciidoctor.org[Asciidoctor]
  devel@discuss.example.org
  mailto:devel@discuss.example.org[Discuss]
