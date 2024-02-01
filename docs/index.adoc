@@ -75,7 +75,7 @@ v1.0, 2024-02-01
  <<趣闻？>> - 跨文本区块引用
 
 .显示效果
-https://asciidoctor.org - 自动的链接
+https://asciidoctor.org - 自动链接
 
 https://asciidoctor.org[Asciidoctor]
 
