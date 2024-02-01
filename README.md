@@ -1,2 +1,2 @@
 # weekly
-Weekly Learn Articles by Natsufumij
+Weekly Learn Articles by Natsufumij.
