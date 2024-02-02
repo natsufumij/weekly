@@ -15,7 +15,7 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor *.adoc */*.adoc"
+          program: "asciidoctor ./docs/*.adoc ./docs/*/*.adoc"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
     - name: Deploy docs to ghpages
