@@ -452,6 +452,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_段落">段落</a></li>
 <li><a href="#_文本格式">文本格式</a></li>
 <li><a href="#_链接">链接</a></li>
+<li><a href="#_文档标题">文档标题</a></li>
+<li><a href="#_自动目录">自动目录</a></li>
+<li><a href="#_导入文档">导入文档</a></li>
+<li><a href="#_列表">列表</a></li>
+<li><a href="#_图像">图像</a></li>
+<li><a href="#_文字和源代码">文字和源代码</a></li>
+<li><a href="#_一些警示语">一些警示语</a></li>
+<li><a href="#_分隔块与引用">分隔块与引用</a></li>
 </ul>
 </li>
 </ul>
@@ -459,7 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_趣闻">趣闻？</h2>
+<h2 id="_趣闻">趣闻？<a id="AsciiDoc"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>作为一个程序员，最早接触的标记语言是 <code>XML</code>，随着时间的推移，<code>HTML</code> 和各种琳琅满目的编程语言和各种奇奇怪怪的标记语言相遇了。不过，今天的主角，是我编写本篇文章所使用的标记语言 <code>AsciiDoc</code> ，简称 <code>adoc</code>。</p>
@@ -495,16 +503,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_段落">段落</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">段落</div>
 <div class="content">
 <pre>段落不需要特殊的标记符号，一个段落由一行或多行文字组成。
-断开新的一行也不会形成新的段落。</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>但是至少要空一行，以此来形成新的一个段落。</pre>
+断开新的一行也不会形成新的段落。
+
+但是至少要空一行，以此来形成新的一个段落。</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -517,7 +522,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_文本格式">文本格式</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">强调</div>
 <div class="content">
 <pre>它可以 *伤害* 我。
@@ -546,7 +551,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_链接">链接</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">自动链接、URL标志、邮件标志</div>
 <div class="content">
 <pre>https://asciidoctor.org - 自动的链接
@@ -556,7 +561,7 @@ mailto:devel@discuss.example.org[Discuss]
 link:++https://example.org/?q=[a b]++[带特殊字符串的URL]
 https://example.org/?q=%5Ba%20b%5D[带特殊字符串的URL]
 link:index.html[Docs]
-&lt;&lt;趣闻？&gt;&gt; - 跨文本区块引用</pre>
+&lt;&lt;AsciiDoc,趣闻&gt;&gt; - 跨文本区块引用</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -582,7 +587,573 @@ link:index.html[Docs]
 <p><a href="index.adoc">Docs</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#AsciiDoc 学习">[AsciiDoc 学习]</a> - 跨文本区块引用</p>
+<p><a href="#AsciiDoc">趣闻</a> - 跨文本区块引用</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_文档标题">文档标题</h3>
+<div class="listingblock">
+<div class="title">文档标题</div>
+<div class="content">
+<pre>= 大标题ABC（大标题）
+作者名称 &lt;author@email.org&gt;; 其他作者 &lt;a.author@email.org&gt;
+== 子标题（一级块标题）
+=== 子标题（二级块标题）
+==== 子标题（三级块标题）
+===== 子标题（四级块标题）
+====== 子标题（五级块标题）
+== 另一个一级块标题</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自动目录">自动目录</h3>
+<div class="listingblock">
+<div class="title">自动目录</div>
+<div class="content">
+<pre>= 文档标题
+作者名称 &lt;author@email.com&gt;
+:toc:</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_导入文档">导入文档</h3>
+<div class="paragraph">
+<p>将其他文档作为此文档的一部分，展示在此页面上。</p>
+</div>
+<div class="literalblock">
+<div class="title">导入文档</div>
+<div class="content">
+<pre>include::adoc1.adoc[]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">从URL导入内容</div>
+<div class="content">
+<pre>include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/main/README.adoc[]</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_列表">列表</h3>
+<div class="listingblock">
+<div class="title">无序列表</div>
+<div class="content">
+<pre>* 列表项
+** 嵌套列表
+*** 深度嵌套列表
+* 列表项
+** 另一个内嵌项
+* 列表项</pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">展示效果</div>
+<ul>
+<li>
+<p>列表项</p>
+<div class="ulist">
+<ul>
+<li>
+<p>嵌套列表</p>
+<div class="ulist">
+<ul>
+<li>
+<p>深度嵌套列表</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>列表项</p>
+<div class="ulist">
+<ul>
+<li>
+<p>另一个内嵌项</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>列表项</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">有序列表</div>
+<div class="content">
+<pre>. 步骤1
+. 步骤2
+.. 步骤2.1
+.. 步骤2.2
+. 步骤3</pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">显示效果</div>
+<ol class="arabic">
+<li>
+<p>步骤1</p>
+</li>
+<li>
+<p>步骤2</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>步骤2.a</p>
+</li>
+<li>
+<p>步骤2.b</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>步骤3</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">清单</div>
+<div class="content">
+<pre>* [*] 已完成
+* [x] 已完成
+* [ ] 未完成
+* 正常的列表</pre>
+</div>
+</div>
+<div class="ulist checklist">
+<div class="title">显示效果</div>
+<ul class="checklist">
+<li>
+<p>&#10003; 已完成</p>
+</li>
+<li>
+<p>&#10003; 已完成</p>
+</li>
+<li>
+<p>&#10063; 未完成</p>
+</li>
+<li>
+<p>正常的列表</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_图像">图像</h3>
+<div class="listingblock">
+<div class="title">块图像宏</div>
+<div class="content">
+<pre>image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset,caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::macros:sunset.jpg[Sunset,200,100]
+
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+<div class="title">Figure 1. 显示效果</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="Sunset">
+</div>
+</div>
+<div id="img-sunset" class="imageblock">
+<div class="content">
+<a class="image" href="https://www.flickr.com/photos/javh/5448336655"><img src="macros:sunset.jpg" alt="Sunset" width="200" height="100"></a>
+</div>
+<div class="title">Figure 1: A mountain sunset</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://asciidoctor.org/images/octocat.jpg" alt="GitHub mascot">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">内嵌图像宏</div>
+<div class="content">
+<pre>点击 image:play.png[title=启动] 开始Party!
+点击 image:pause.png[title=暂停] 当你想要歇一会的时候.</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">显示效果</div>
+<p>点击 <span class="image"><img src="play.png" alt="play" title="启动"></span> 开始Party!
+点击 <span class="image"><img src="pause.png" alt="pause" title="暂停"></span> 当你想要歇一会的时候.</p>
+</div>
+<div class="literalblock">
+<div class="title">定位作用的内嵌图像宏</div>
+<div class="content">
+<pre>image:sunset.jpg[Sunset,150,150,role=right] What a beautiful sunset!</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">显示效果</div>
+<p><span class="image right"><img src="sunset.jpg" alt="Sunset" width="150" height="150"></span> What a beautiful sunset!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_文字和源代码">文字和源代码</h3>
+<div class="literalblock">
+<div class="title">内联文字等宽</div>
+<div class="content">
+<pre>输出等宽文本，比如 `+{backtick}+` 或者 `+http://localhost:8080+`, 方法是将文本括在一对加号中，并用一对反引号括起来。（注意，反引号需要和前后保持一个空格）</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">显示效果</div>
+<p>输出等宽文本，比如 <code>{backtick}</code> 或者 <code>http://localhost:8080</code>, 方法是将文本括在一对加号中，并用一对反引号括起来。（注意，反引号需要和前后保持一个空格）</p>
+</div>
+<div class="listingblock">
+<div class="title">文字块</div>
+<div class="content">
+<pre>....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+
+Would you like to try again? y/n
+....</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">显示效果</div>
+<div class="content">
+<pre>error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+
+Would you like to try again? y/n</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">带标题的列表块</div>
+<div class="content">
+<pre>.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~&gt; 2.0.15)
+----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>显示效果</p>
+</div>
+<div class="listingblock">
+<div class="title">Gemfile.lock</div>
+<div class="content">
+<pre>GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~&gt; 2.0.15)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">带有标题和语法高亮的代码块</div>
+<div class="content">
+<pre>.Some Ruby Code
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>显示效果</p>
+</div>
+<div class="listingblock">
+<div class="title">Some Ruby Code</div>
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">带有标注的代码块</div>
+<div class="content">
+<pre>[source,ruby]
+----
+require 'sinatra' // <b class="conum">(1)</b>
+
+get '/hi' do // <b class="conum">(2)</b>
+  "Hello World!" // <b class="conum">(3)</b>
+end
+----
+&lt;1&gt; 导入库
+&lt;2&gt; URL 映射
+&lt;3&gt; Http 响应体</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">显示效果</div>
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">require 'sinatra' // <b class="conum">(1)</b>
+
+get '/hi' do // <b class="conum">(2)</b>
+  "Hello World!" // <b class="conum">(3)</b>
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>导入库</p>
+</li>
+<li>
+<p>URL 映射</p>
+</li>
+<li>
+<p>Http 响应体</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="title">文件中包含的源块内容</div>
+<div class="content">
+<pre> [,java]
+ ----
+ include::hello.java[]
+ ----</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">显示效果</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class hello{
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_一些警示语">一些警示语</h3>
+<div class="listingblock">
+<div class="title">警示段落</div>
+<div class="content">
+<pre>NOTE: An admonition draws the reader's attention to auxiliary information.
+
+Here are the other built-in admonition types:
+
+IMPORTANT: Don't forget the children!
+
+TIP: Look for the warp zone under the bridge.
+
+CAUTION: Slippery when wet.
+
+WARNING: The software you're about to use is untested.
+
+IMPORTANT: Sign off before stepping away from your computer.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>显示效果</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+笔记注释文本的内容
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>其他的一些警示类型：</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+重要内容！别忘记你还有家人和孩子！（虽然我没有结婚）
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+提示， <code>1+1=2</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+注意，如果出现摔倒了，是很危险的！
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+警告，你如果再不停下来，休怪我对你不客气了！
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+先些设计，再写代码！
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_分隔块与引用">分隔块与引用</h3>
+<div class="listingblock">
+<div class="title">名言引用</div>
+<div class="content">
+<pre>[quote,亚伯拉罕·林肯,葛底斯堡公墓落成典礼上发表讲话]
+____
+四年前，我们的父辈们扎根在这个大陆上，创造了一个新的国家。
+____
+
+[quote,阿尔伯特·爱因斯坦]
+一个从不犯错的人从不尝试任何新事物。
+
+____
+A person who never made a mistake never tried anything new.
+____
+
+"我认为，时不时地有点叛逆是一件好事， 在政治世界中，就像物理界的风暴一样必要。"
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11</pre>
+</div>
+</div>
+<div class="quoteblock">
+<div class="title">显示效果</div>
+<blockquote>
+<div class="paragraph">
+<p>四年前，我们的父辈们扎根在这个大陆上，创造了一个新的国家。</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; 亚伯拉罕·林肯<br>
+<cite>葛底斯堡公墓落成典礼上发表讲话</cite>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+一个从不犯错的人从不尝试任何新事物。
+</blockquote>
+<div class="attribution">
+&#8212; 阿尔伯特·爱因斯坦
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>一个从不犯错的人从不尝试任何新事物。</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+我认为，时不时地有点叛逆是一件好事， 在政治世界中，就像物理界的风暴一样必要。
+</blockquote>
+<div class="attribution">
+&#8212; Thomas Jefferson<br>
+<cite>Papers of Thomas Jefferson: Volume 11</cite>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">直通块</div>
+<div class="content">
+<pre>++++
+直通块中的内容在未经处理的情况下传递到输出。 这意味着您可以包含原始 HTML，例如以下嵌入式 Gist：
+
+&lt;script src="https://gist.github.com/mojavelinux/5333524.js"&gt;
+&lt;/script&gt;
+++++</pre>
+</div>
+</div>
+直通块中的内容在未经处理的情况下传递到输出。 这意味着您可以包含原始 HTML，例如以下嵌入式 Gist：
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
+<div class="literalblock">
+<div class="title">自定义块替换</div>
+<div class="content">
+<pre>:release-version: 2.4.3
+
+[source,xml,subs=attributes+]
+----
+&lt;dependency&gt;
+  &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+  &lt;artifactId&gt;asciidoctorj&lt;/artifactId&gt;
+  &lt;version&gt;{release-version}&lt;/version&gt;
+&lt;/dependency&gt;
+----</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">显示效果</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+  &lt;artifactId&gt;asciidoctorj&lt;/artifactId&gt;
+  &lt;version&gt;2.4.3&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -591,7 +1162,7 @@ link:index.html[Docs]
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2024-02-02 06:50:58 UTC
+Last updated 2024-02-02 08:20:02 UTC
 </div>
 </div>
 </body>

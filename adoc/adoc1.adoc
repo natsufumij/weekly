@@ -4,7 +4,7 @@ v1.0, 2024-02-01
 :toc:
 :home-page: https://natsufumij.cn
 
-== 趣闻？
+== 趣闻？[[AsciiDoc]]
 
 作为一个程序员，最早接触的标记语言是 `XML`，随着时间的推移，`HTML` 和各种琳琅满目的编程语言和各种奇奇怪怪的标记语言相遇了。不过，今天的主角，是我编写本篇文章所使用的标记语言 `AsciiDoc` ，简称 `adoc`。
 
@@ -29,12 +29,12 @@ v1.0, 2024-02-01
 === 段落
 
 .段落
+----
+段落不需要特殊的标记符号，一个段落由一行或多行文字组成。
+断开新的一行也不会形成新的段落。
 
- 段落不需要特殊的标记符号，一个段落由一行或多行文字组成。
- 断开新的一行也不会形成新的段落。
-
- 但是至少要空一行，以此来形成新的一个段落。
-
+但是至少要空一行，以此来形成新的一个段落。
+----
 .显示效果
 段落不需要特殊的标记符号，一个段落由一行或多行文字组成，断开新的一行也不会形成新的段落。
 
@@ -43,13 +43,13 @@ v1.0, 2024-02-01
 === 文本格式
 
 .强调
-
- 它可以 *伤害* 我。
- 但是我 _不能_ 屈服它。
- 可以打字 `OK`。
- 它 *_真的_* 要走。
- 不能挽留吗？ 让我们 `*_试试_*`。
-
+----
+它可以 *伤害* 我。
+但是我 _不能_ 屈服它。
+可以打字 `OK`。
+它 *_真的_* 要走。
+不能挽留吗？ 让我们 `*_试试_*`。
+----
 .显示效果
 它可以 *伤害* 我。
 
@@ -64,15 +64,16 @@ v1.0, 2024-02-01
 === 链接
 
 .自动链接、URL标志、邮件标志
- 
- https://asciidoctor.org - 自动的链接
- https://asciidoctor.org[Asciidoctor]
- devel@discuss.example.org
- mailto:devel@discuss.example.org[Discuss]
- link:++https://example.org/?q=[a b]++[带特殊字符串的URL]
- https://example.org/?q=%5Ba%20b%5D[带特殊字符串的URL]
- link:index.html[Docs]
- <<趣闻？>> - 跨文本区块引用
+----
+https://asciidoctor.org - 自动的链接
+https://asciidoctor.org[Asciidoctor]
+devel@discuss.example.org
+mailto:devel@discuss.example.org[Discuss]
+link:++https://example.org/?q=[a b]++[带特殊字符串的URL]
+https://example.org/?q=%5Ba%20b%5D[带特殊字符串的URL]
+link:index.html[Docs]
+<<AsciiDoc,趣闻>> - 跨文本区块引用
+----
 
 .显示效果
 https://asciidoctor.org - 自动的链接
@@ -89,4 +90,369 @@ https://example.org/?q=%5Ba%20b%5D[带特殊字符串的URL]
 
 link:index.adoc[Docs]
 
-<<AsciiDoc 学习>> - 跨文本区块引用
+<<AsciiDoc,趣闻>> - 跨文本区块引用
+
+=== 文档标题
+.文档标题
+----
+= 大标题ABC（大标题）
+作者名称 <author@email.org>; 其他作者 <a.author@email.org>
+== 子标题（一级块标题）
+=== 子标题（二级块标题）
+==== 子标题（三级块标题） 
+===== 子标题（四级块标题）
+====== 子标题（五级块标题）
+== 另一个一级块标题
+----
+
+=== 自动目录
+
+.自动目录
+----
+= 文档标题
+作者名称 <author@email.com>
+:toc:
+----
+
+=== 导入文档
+将其他文档作为此文档的一部分，展示在此页面上。
+
+.导入文档
+ include::adoc1.adoc[]
+
+.从URL导入内容
+ include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/main/README.adoc[]
+
+=== 列表
+
+.无序列表
+----
+* 列表项
+** 嵌套列表
+*** 深度嵌套列表
+* 列表项
+** 另一个内嵌项
+* 列表项
+----
+
+.展示效果
+* 列表项
+** 嵌套列表
+*** 深度嵌套列表
+* 列表项
+** 另一个内嵌项
+* 列表项
+
+.有序列表
+----
+. 步骤1
+. 步骤2
+.. 步骤2.1
+.. 步骤2.2
+. 步骤3
+----
+.显示效果
+. 步骤1
+. 步骤2
+.. 步骤2.a
+.. 步骤2.b
+. 步骤3
+
+.清单
+----
+* [*] 已完成
+* [x] 已完成
+* [ ] 未完成
+* 正常的列表
+----
+.显示效果
+* [*] 已完成
+* [x] 已完成
+* [ ] 未完成
+* 正常的列表
+
+=== 图像
+
+.块图像宏
+----
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset,caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::macros:sunset.jpg[Sunset,200,100]
+
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+----
+.显示效果
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset,caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::macros:sunset.jpg[Sunset,200,100]
+
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+.内嵌图像宏
+----
+点击 image:play.png[title=启动] 开始Party!
+点击 image:pause.png[title=暂停] 当你想要歇一会的时候.
+----
+.显示效果
+点击 image:play.png[title=启动] 开始Party!
+点击 image:pause.png[title=暂停] 当你想要歇一会的时候.
+
+.定位作用的内嵌图像宏
+ image:sunset.jpg[Sunset,150,150,role=right] What a beautiful sunset!
+
+.显示效果
+image:sunset.jpg[Sunset,150,150,role=right] What a beautiful sunset!
+
+=== 文字和源代码
+
+.内联文字等宽
+ 输出等宽文本，比如 `+{backtick}+` 或者 `+http://localhost:8080+`, 方法是将文本括在一对加号中，并用一对反引号括起来。（注意，反引号需要和前后保持一个空格）
+
+.显示效果
+输出等宽文本，比如 `+{backtick}+` 或者 `+http://localhost:8080+`, 方法是将文本括在一对加号中，并用一对反引号括起来。（注意，反引号需要和前后保持一个空格）
+
+.文字块
+----
+....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+
+Would you like to try again? y/n
+....
+----
+
+.显示效果
+....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+
+Would you like to try again? y/n
+....
+
+.带标题的列表块
+....
+.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~> 2.0.15)
+----
+....
+
+显示效果
+
+.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~> 2.0.15)
+----
+
+.带有标题和语法高亮的代码块
+....
+.Some Ruby Code
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+....
+
+显示效果
+
+.Some Ruby Code
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+
+.带有标注的代码块
+....
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+  "Hello World!" // <3>
+end
+----
+<1> 导入库
+<2> URL 映射
+<3> Http 响应体
+....
+
+.显示效果
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+  "Hello World!" // <3>
+end
+----
+<1> 导入库
+<2> URL 映射
+<3> Http 响应体
+
+.文件中包含的源块内容
+....
+ [,java]
+ ----
+ include::hello.java[]
+ ----
+....
+
+.显示效果
+[source,java]
+....
+include::hello.java[]
+....
+
+=== 一些警示语
+
+.警示段落
+----
+NOTE: An admonition draws the reader's attention to auxiliary information.
+
+Here are the other built-in admonition types:
+
+IMPORTANT: Don't forget the children!
+
+TIP: Look for the warp zone under the bridge.
+
+CAUTION: Slippery when wet.
+
+WARNING: The software you're about to use is untested.
+
+IMPORTANT: Sign off before stepping away from your computer.
+----
+
+显示效果
+
+NOTE: 笔记注释文本的内容
+
+其他的一些警示类型：
+
+IMPORTANT: 重要内容！别忘记你还有家人和孩子！（虽然我没有结婚）
+
+TIP: 提示， `1+1=2` 
+
+CAUTION: 注意，如果出现摔倒了，是很危险的！
+
+WARNING: 警告，你如果再不停下来，休怪我对你不客气了！
+
+IMPORTANT: 先些设计，再写代码！
+
+=== 分隔块与引用
+
+.名言引用
+
+----
+[quote,亚伯拉罕·林肯,葛底斯堡公墓落成典礼上发表讲话]
+____
+四年前，我们的父辈们扎根在这个大陆上，创造了一个新的国家。
+____
+
+[quote,阿尔伯特·爱因斯坦]
+一个从不犯错的人从不尝试任何新事物。
+
+____
+A person who never made a mistake never tried anything new.
+____
+
+"我认为，时不时地有点叛逆是一件好事， 在政治世界中，就像物理界的风暴一样必要。"
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+----
+
+.显示效果
+[quote,亚伯拉罕·林肯,葛底斯堡公墓落成典礼上发表讲话]
+____
+四年前，我们的父辈们扎根在这个大陆上，创造了一个新的国家。
+____
+
+[quote,阿尔伯特·爱因斯坦]
+一个从不犯错的人从不尝试任何新事物。
+
+____
+一个从不犯错的人从不尝试任何新事物。
+____
+
+"我认为，时不时地有点叛逆是一件好事， 在政治世界中，就像物理界的风暴一样必要。"
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+.直通块
+
+----
+++++
+直通块中的内容在未经处理的情况下传递到输出。 这意味着您可以包含原始 HTML，例如以下嵌入式 Gist：
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
+++++
+----
+
+.显示效果
+
+++++
+直通块中的内容在未经处理的情况下传递到输出。 这意味着您可以包含原始 HTML，例如以下嵌入式 Gist：
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
+++++
+
+.自定义块替换
+
+....
+:release-version: 2.4.3
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+  <groupId>org.asciidoctor</groupId>
+  <artifactId>asciidoctorj</artifactId>
+  <version>{release-version}</version>
+</dependency>
+----
+....
+
+.显示效果
+
+:release-version: 2.4.3
+
+[source,xml,subs=attributes+]
+----
+<dependency>
+  <groupId>org.asciidoctor</groupId>
+  <artifactId>asciidoctorj</artifactId>
+  <version>{release-version}</version>
+</dependency>
+----
