@@ -2,4 +2,4 @@
 Natsufumij <natsufumij@yeah.net>
 :home-page: https://natsufumij.cn
 
-link:./adoc/adoc1.adoc[Adoc学习的第一天]
+link:./adoc/adoc1[Adoc学习的第一天]
