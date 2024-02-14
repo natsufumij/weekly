@@ -1,6 +1,5 @@
 = 学习周记
-Natsufumij <natsufumij@yeah.net>
-:home-page: https://natsufumij.cn
+natsufumij <natsufumij@yeah.net>
 
 * link:./adoc/adoc1[Adoc学习的第一天]
 * link:./self/self-resume[个人简历]

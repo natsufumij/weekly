@@ -1,4 +1,5 @@
 = 个人简历
+natsufumij <natsufumij@yeah.net>
 
 == 联系方式
 * 手机: 187********
