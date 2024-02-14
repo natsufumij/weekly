@@ -16,13 +16,13 @@ v1.0, 2024-02-01
 
 因为一次翻译的任务，我认识了这个标记语法，因为不太清楚它的地位以及对 `Markdown` 语法便捷性的喜爱，所以我甚至对它嗤之以鼻，认为它不是一个好东西。
 
-当然，这是我个人的偏见与傲慢，再做完我的那次任务，我不止一次地再往上搜索了关于 `adoc` 和 `AsciiDoc` 的文章和网站，最后到达了https://asciidoc.org/[官方网站]。
+当然，这是我个人的偏见与傲慢，再做完我的那次任务，我不止一次地再往上搜索了关于 `adoc` 和 `AsciiDoc` 的文章和网站，最后到达了 https://asciidoc.org/[官方网站]。
 
 其标准的定义深深地吸引了我，和 `Markdown` 不同的简洁语法，繁多的标准功能，这些都是让我能够重拾对标记语言的信心。
 
 废话还是不多说了，接下来就用来感受一下这个标记语言的魅力吧。
 
-（以下为参考官网的学习笔记，官网地址: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference）
+（以下为参考官网的学习笔记，官网地址: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference ）
 
 == 常用标记
 
