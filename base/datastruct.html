@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="author" content="natsufumij">
-<title>个人简历</title>
+<title>基本数据结构</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,201 +436,356 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>个人简历</h1>
+<h1>基本数据结构</h1>
 <div class="details">
 <span id="author" class="author">natsufumij</span><br>
 <span id="email" class="email"><a href="mailto:natsufumij@yeah.net">natsufumij@yeah.net</a></span><br>
 </div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_简介">简介</a></li>
+<li><a href="#_栈">栈</a>
+<ul class="sectlevel2">
+<li><a href="#_栈的定义">栈的定义</a></li>
+<li><a href="#_栈的使用场景">栈的使用场景</a></li>
+</ul>
+</li>
+<li><a href="#_队列">队列</a>
+<ul class="sectlevel2">
+<li><a href="#_队列的定义">队列的定义</a></li>
+<li><a href="#_队列的使用场景">队列的使用场景</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_联系方式">联系方式</h2>
+<h2 id="_简介">简介</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><code>程序=数据结构+算法</code></p>
+</div>
+<div class="paragraph">
+<p>在我们最开始学数据结构的时候，书上总会写着这样一句话。</p>
+</div>
+<div class="paragraph">
+<p>确实如此，程序就等于数据结构加上算法，这点无论在任何程序都能成立。小至驱动程序大到操作系统这些都是最主要的内容。从第一个开始编写计算机程序开始，逐渐形成了很多不同的数据结构，比如列表、栈、队列、图、树等等……这些数据结构在经过适当变体或者加强之后，仍活跃在现如今的各种程序当中。</p>
+</div>
+<div class="paragraph">
+<p>我们就来回顾以下这些从远古时期就存在并沿用至今的经典数据结构吧。</p>
+</div>
+<div class="paragraph">
+<p>当前仍然使用的经典数据结构如下：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>手机: 187<strong><strong></strong></strong>**</p>
+<p>线性表：数组列表、链表列表（普通数据结构）</p>
 </li>
 <li>
-<p>Email: <a href="mailto:natsufumij@yeah.net">natsufumij@yeah.net</a></p>
+<p>栈：在一些特殊算法中会使用到，比如中缀式数值计算等、树的无递归遍历等</p>
 </li>
 <li>
-<p>QQ/微信号: natsufumij19980824</p>
+<p>队列：双端队列、树的无递归遍历、</p>
+</li>
+<li>
+<p>图：在一些特殊算法中会使用到，比如查找路径等</p>
+</li>
+<li>
+<p>树：排序树、查找树、B树、B+树、红黑树</p>
+</li>
+<li>
+<p>Hash：在存储和快速查找会使用到，比如Java的HashMap</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>我们一个一个地回顾这些经典数据结构，并在举例的几个例子中查看各个数据结构所带有的魅力吧？</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_个人信息">个人信息</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>阮强强/男/1998年8月</p>
-</li>
-<li>
-<p>本科/浙江理工大学科技与艺术学院电子信息工程</p>
-</li>
-<li>
-<p>工作时长: 2年</p>
-</li>
-<li>
-<p>技术博客: <a href="http://natsufumij.github.io/weekly/" class="bare">http://natsufumij.github.io/weekly/</a></p>
-</li>
-<li>
-<p>Github: <a href="http://github.com/natsufumij" class="bare">http://github.com/natsufumij</a></p>
-</li>
-<li>
-<p>期望职位: Java高级程序员</p>
-</li>
-<li>
-<p>期望薪资: 税前月薪12k~15k, 特别喜欢的公司可例外</p>
-</li>
-<li>
-<p>期望城市: 杭州</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_工作经历">工作经历</h2>
+<h2 id="_栈">栈</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_浙江迅播网络科技有限公司_2020年6月_2020年11月">浙江迅播网络科技有限公司 (2020年6月~ 2020年11月)</h3>
-<div class="sect3">
-<h4 id="_废水工业处理项目">废水工业处理项目</h4>
+<h3 id="_栈的定义">栈的定义</h3>
+<div class="paragraph">
+<p>栈是一种特殊的线性表，仅允许在一端进行LIFO(Last in First Out)，即后入先出操作，这一端称为 <code>栈顶</code> 。而最低端称为 <code>栈底</code> 。向一个栈放入元素称为 <code>入栈</code> ,压栈后，该元素自动称为新的栈顶。而从栈顶删除元素称为 <code>出栈</code> ，出栈后，栈顶会自动向下退一格，直到不存在元素，栈为空。</p>
+</div>
+<div class="paragraph">
+<p>栈只有几个操作：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>负责的工作</p>
+<p>判空</p>
 </li>
 <li>
-<p>碰到的困难</p>
+<p>入栈</p>
 </li>
 <li>
-<p>采取的措施</p>
-</li>
-<li>
-<p>最后的结果</p>
-</li>
-<li>
-<p>学到的东西</p>
+<p>出栈</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_杭州云川控制系统有限公司_2022年6月_2023年11月">杭州云川控制系统有限公司 (2022年6月~ 2023年11月)</h3>
-<div class="sect3">
-<h4 id="_电梯互联系统项目">电梯互联系统项目</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>负责的工作</p>
-</li>
-<li>
-<p>碰到的困难</p>
-</li>
-<li>
-<p>采取的措施</p>
-</li>
-<li>
-<p>最后的结果</p>
-</li>
-<li>
-<p>学到的东西</p>
-</li>
-</ul>
+<h3 id="_栈的使用场景">栈的使用场景</h3>
+<div class="paragraph">
+<p>栈的使用场景相当广泛。包括中缀式数值计算，树的无递归遍历，操纵记录。</p>
 </div>
+<div class="paragraph">
+<p>Java 集合中的 <code>Stack</code> 类为方法添加了 <code>synchronized</code> 关键字，从而达到多线程安全的目的，但是由于 为方法添加了 <code>synchronized</code> 关键字，相当于给对象加了个锁，在多线程访问时会有较大的性能损失，因此在 <code>Stack</code> 类的注释中也给出了，可以使用另一种 <code>Deque</code> 即双端队列实现 <code>LIFO</code> 的栈操作。</p>
 </div>
-<div class="sect3">
-<h4 id="_建站系统项目">建站系统项目</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>负责的工作</p>
-</li>
-<li>
-<p>碰到的困难</p>
-</li>
-<li>
-<p>采取的措施</p>
-</li>
-<li>
-<p>最后的结果</p>
-</li>
-<li>
-<p>学到的东西</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_开源项目和作品">开源项目和作品</h2>
-<div class="sectionbody">
+<div class="listingblock">
+<div class="title">示例1.中缀式数值计算</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Map;
+import java.util.Set;
 
-</div>
-</div>
-<div class="sect1">
-<h2 id="_技术文章">技术文章</h2>
-<div class="sectionbody">
+public class StackDemo1 {
+    public static void main(String[] args) {
+        Calc calc = new Calc();
+        double result = calc.calc("(1+2)*2/2+8*2-9");
+        System.out.println("result :"+result);
+    }
+}
 
+class Calc{
+    /**
+     * 
+     * @param expression
+     * @return
+     */
+    public double calc(String expression){
+        expression = expression.replace(" ", "");
+        char[] middle = toMiddlePattern(expression);
+        return calcMiddlePattern(middle);
+    }
+
+    /**
+     *  中缀式转后缀式
+     *  从左至右依次遍历中缀表达式各个字符（需要准备一个字符栈存储操作符和括号）
+     *  1、字符为 运算数 ：
+     *   直接送入后缀表达式（注：需要先分析出完整的运算数）。
+     *  2、字符为 左括号 ：
+     *    直接入栈（注：左括号入栈后优先级降至最低）。
+     *  3、字符为 右括号 ：
+     *   直接出栈，并将出栈字符依次送入后缀表达式，直到栈顶字符为左括号（左括号也要出栈，但不送入后缀表达式）。
+     *   总结：只要满足 栈顶为左括号 即可进行最后一次出栈。
+     *  4、字符为 操作符 ：
+     *   若栈空，直接入栈。
+     *   若栈非空，判断栈顶操作符，若栈顶操作符优先级低于该操作符，该操作符入栈；否则一直出栈，并将出栈字符依次送入后缀表达式，直到栈空或栈顶操作符优先级低于该操作符，该操作符再入栈。
+     *  总结：只要满足 栈空 或者 优先级高于栈顶操作符 即可停止出栈，并将该操作符入栈。
+     *  5、重复以上步骤直至遍历完成中缀表达式，接着判断字符栈是否为空，非空则直接出栈，并将出栈字符依次送入后缀表达式。
+     *  注：中缀表达式遍历完成，栈中可能还有字符未输出，故需要判断栈空。
+     * @param expression
+     * @return
+     */
+    public char[] toMiddlePattern(String expression){
+        StringBuilder builder = new StringBuilder();
+        char[] chars = expression.toCharArray();
+        Deque&lt;Character&gt; stack = new ArrayDeque&lt;&gt;();
+        Map&lt;String,Integer&gt; opratePiority = Map.of("+",1,"-",1,"*",2,"/",2,"(",0);
+        for(char c : chars){
+            if(c&gt;='0' &amp;&amp; c&lt;='9'){
+                builder.append(c);
+            }else if(c=='('){
+                stack.push(c);
+            }else if(c==')'){
+                char ca='0';
+                do{
+                    ca = stack.pop();
+                    if(ca!='('){
+                        builder.append(ca);
+                    }
+                }while(ca!='(' &amp;&amp; !stack.isEmpty());
+            }else{
+                if(stack.isEmpty()){
+                    stack.push(c);
+                }else{
+                    Integer pi = opratePiority.get(c+"");
+                    if(pi!=null){
+                        Integer pi2 = -1;
+                        char c2 = stack.pop();
+                        pi2 = opratePiority.get(c2+"");
+                        if(pi2&lt;pi){
+                            stack.push(c2);
+                            stack.push(c);                        
+                        }else{
+                            builder.append(c2);
+                            while(!stack.isEmpty() &amp;&amp; pi2&gt;=pi){
+                                c2 = stack.pop();
+                                if(c2=='('){
+                                    stack.push(c2);
+                                    break;
+                                }
+                                pi2 = opratePiority.get(c2+"");
+                                if(pi2&gt;=pi){
+                                    builder.append(c2);
+                                }
+                            }
+                            stack.push(c);
+                        }
+                    }
+                }
+            }
+        }
+        while(!stack.isEmpty()){
+            builder.append(stack.pop());
+        }
+        return builder.toString().toCharArray();
+    }
+
+    /**
+     * 
+     * 计算后缀式表达式表达值
+     * 
+     * 1、字符为运算数：
+     *  入栈
+     * 2、如果为操作符：
+     *  出栈t1, 出栈t2
+     * 将t2与t1做操作符运算。
+     */
+    public double calcMiddlePattern(char[] middlePattern){
+        Deque&lt;Double&gt; stack = new ArrayDeque&lt;&gt;();
+        Set&lt;Character&gt; set = Set.of('+','-','*','/');
+        for(char c : middlePattern){
+            if(set.contains(c)){
+                Double c1 = stack.pop();
+                Double c2 = stack.pop();
+                Double i2 = 0.0;
+                switch (c) {
+                    case '+':
+                        i2=c2+c1;
+                        break;
+                    case '-':
+                        i2=c2-c1;
+                        break;
+                    case '*':
+                        i2=c2*c1;
+                        break;
+                    case '/':
+                        i2=c2/c1;
+                        break;
+                    default:
+                        break;
+                }
+                stack.push(i2);
+            }else{
+                double i = c-'0';
+                stack.push(i);
+            }
+        }
+        return stack.pop();
+    }
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_技能清单">技能清单</h2>
+<h2 id="_队列">队列</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_熟练的技能">熟练的技能</h3>
+<h3 id="_队列的定义">队列的定义</h3>
+<div class="paragraph">
+<p>栈是一种特殊的线性表，在一端(被称为 <code>队尾</code> )仅允许进行添加元素操作，在另一端(被称为 <code>队头</code> )仅允许进行抽出元素操作，是一种FIFO(First In First Out)，即先入先出操作。</p>
+</div>
+<div class="paragraph">
+<p>在平常生活中，最为形象的就是排队。当你位于队列中，队头的人不断地结束业务办理，当然或许有些人会因为有急事直接在插在队头，当然这就是另一种特殊的队列（双端队列），若仅在双端队列的对头进行添加和抽出的操作，那么这个队列就会变成一个 <code>栈</code>，在这里我们暂时不详细讨论双端队列。</p>
+</div>
+<div class="paragraph">
+<p>队列只有几个操作：</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>后端开发: Java、Spring、Spring Boot、Spring MVC、</p>
+<p>判空</p>
 </li>
 <li>
-<p>前端框架: Vue.js</p>
+<p>入队</p>
 </li>
 <li>
-<p>数据库: MySQL</p>
-</li>
-<li>
-<p>版本版本、部署工具: Git、Docker Compose</p>
-</li>
-<li>
-<p>部署平台: Docker</p>
-</li>
-<li>
-<p>单元测试: JUnit</p>
-</li>
-<li>
-<p>中间件: Redis</p>
+<p>出队</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>在 Java 集合中, <code>LinkedList</code>、<code>ArrayDeque</code> 均实现了双端队列，区别在于内部实现的数据结构用的是数组还是链表，在随机访问、操作等多种常用场景时有所不同。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_了解的技能">了解的技能</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>后端开发: Kotlin、Spring Cloud、Spring Cloud Alibaba</p>
-</li>
-<li>
-<p>前端框架: Angular</p>
-</li>
-<li>
-<p>部署平台: Linux</p>
-</li>
-<li>
-<p>待期待添加的技能 RocketMQ、Sentinel、Selta、</p>
-</li>
-</ul>
+<h3 id="_队列的使用场景">队列的使用场景</h3>
+<div class="paragraph">
+<p>队列有很多的使用场景。</p>
+</div>
+<div class="paragraph">
+<p>队列在树的遍历中有着不错的优势，其优势是使代码摆脱较为晦涩的递归形式，使代码可以在一个函数里就可以将全部的树节点给遍历完成，省了一部分的函数堆栈。</p>
+</div>
+<div class="listingblock">
+<div class="title">示例1.树的层序遍历</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">import java.util.ArrayDeque;
+import java.util.Queue;
+
+public class QueueDemo1 {
+    public static void main(String[] args) {
+        var data = prepareData();
+        visiteTree(data);
+    }   
+
+    private static void visiteTree(TreeNode&lt;String&gt; tree){
+        Queue&lt;TreeNode&lt;String&gt;&gt; queue = new ArrayDeque&lt;&gt;();
+        queue.offer(tree);
+        while(!queue.isEmpty()){
+            var node = queue.poll();
+            System.out.print(node.getData()+"&gt;");
+            var children = node.getChildren();
+            for(TreeNode&lt;String&gt; n: children){
+                queue.offer(n);
+            }
+        }
+        System.out.println(".");
+    }
+    
+    /**
+     * A
+     * |  |
+     * B   C
+     * | |   |
+     * D E   F
+     * | | |  
+     * G H I
+     * @return
+     */
+    private static TreeNode&lt;String&gt; prepareData(){
+        var a = new MyTree&lt;&gt;("A");
+        var b = new MyTree&lt;&gt;("B");
+        var c = new MyTree&lt;&gt;("C");
+        var d = new MyTree&lt;&gt;("D");
+        var e = new MyTree&lt;&gt;("E");
+        var f = new MyTree&lt;&gt;("F");
+        var g = new MyTree&lt;&gt;("G");
+        var h = new MyTree&lt;&gt;("H");
+        var i = new MyTree&lt;&gt;("I");
+        a.getChildren().add(b);
+        a.getChildren().add(c);
+        b.getChildren().add(d);
+        b.getChildren().add(e);
+        c.getChildren().add(f);
+        d.getChildren().add(g);
+        e.getChildren().add(h);
+        e.getChildren().add(i);
+        return a;
+    }
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
