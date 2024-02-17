@@ -3,3 +3,4 @@ natsufumij <natsufumij@yeah.net>
 
 * link:./adoc/adoc1[Adoc学习的第一天]
 * link:./self/self-resume[个人简历]
+* link:./base/datastruct[数据结构笔记1]
